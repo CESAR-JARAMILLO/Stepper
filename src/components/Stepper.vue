@@ -26,31 +26,31 @@ name: 'Stepper'
 <style scoped>
 .stepper-container {
   text-align: center;
-  font-size: 20px;
+  font-size: 1.25rem;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
 }
 .stepper-container div {
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 1.25rem;
 }
-.stepper-container li {
+/* .stepper-container li {
   display: inline-block;
-  margin-left: 20px;
-}
+  margin-left: 1.25rem;
+} */
 .circle {
   border-radius: 50%;
   color: #8F92A1;
   background-color: #E0E0E5;
   font-weight: 500;
-  line-height: 40px;
-  height: 40px;
-  width: 40px;
+  line-height: 2.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
 }
 hr {
-  width: 60px;
-  margin-left: 35px;
+  width: 3.75rem;
+  margin-left: 1.50rem;
   border: 1px solid #E0E0E5;
 }
 .active {
