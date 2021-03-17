@@ -1,15 +1,20 @@
 <template>
-  <div class="row">
-  <div class="col-xs-12 col-md-8 offset-md-2 block border">
-    <div class="wrapper-progressBar">
-      <ul class="progressBar">
-        <li class="active">Beong Processed</li>
-        <li class="active">Waiting for payment</li>
-        <li>Paid</li>
-      </ul>
-    </div>
-  </div>
-</div>
+  <ul class="stepper-container">
+      <li>
+        <div class="circle active"><p>1</p></div>
+        <div>Choose template</div>
+      </li>
+      <hr>
+      <li>
+        <div class="circle">2</div>
+        <div>Enter your details</div>
+      </li>
+      <hr>
+      <li>
+        <div class="circle">3</div>
+        <div>Download resume</div>
+      </li>
+    </ul>
 </template>
 
 <script>
@@ -19,59 +24,37 @@ name: 'Stepper'
 </script>
 
 <style scoped>
-.wrapper-progressBar {
-    width: 100%
+.stepper-container {
+  text-align: center;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-/* .progressBar {
-} */
-
-.progressBar li {
-    list-style-type: none;
-    float: left;
-    width: 33%;
-    position: relative;
-    text-align: center;
+.stepper-container div {
+  display: inline-block;
+  margin-left: 20px;
 }
-
-.progressBar li:before {
-    content: " ";
-    line-height: 30px;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #ddd;
-    display: block;
-    text-align: center;
-    margin: 0 auto 10px;
-    background-color: white
+.stepper-container li {
+  display: inline-block;
+  margin-left: 20px;
 }
-
-.progressBar li:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    background-color: #ddd;
-    top: 15px;
-    left: -50%;
-    z-index: -1;
+.circle {
+  border-radius: 50%;
+  color: #8F92A1;
+  background-color: #E0E0E5;
+  font-weight: 500;
+  line-height: 40px;
+  height: 40px;
+  width: 40px;
 }
-
-.progressBar li:first-child:after {
-    content: none;
+hr {
+  width: 60px;
+  margin-left: 35px;
+  border: 1px solid #E0E0E5;
 }
-
-.progressBar li.active {
-    color: dodgerblue;
-}
-
-.progressBar li.active:before {
-    border-color: dodgerblue;
-    background-color: dodgerblue
-}
-
-.progressBar .active:after {
-    background-color: dodgerblue;
+.active {
+  background-color: #01CBFF;
+  color: white;
 }
 </style>
