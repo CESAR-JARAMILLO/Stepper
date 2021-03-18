@@ -6,12 +6,12 @@
       </li>
       <hr>
       <li>
-        <div class="circle">2</div>
+        <div :class="{circle : true, active : $store.state.step >= 2}">2</div>
         <div>Enter your details</div>
       </li>
       <hr>
       <li>
-        <div class="circle">3</div>
+        <div :class="{circle : true, active : $store.state.step === 3}">3</div>
         <div>Download resume</div>
       </li>
     </ul>
