@@ -19,6 +19,9 @@ export default new Vuex.Store({
     mutations: {
         addStep(state) {
             state.step += 1
+        },
+        removeStep(state) {
+            state.step -= 1
         }
     }
     
