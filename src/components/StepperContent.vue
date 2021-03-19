@@ -14,8 +14,8 @@
           <input type="text" name="lname">
 
           <div class="btn-div">
-            <button class="back-btn">Back</button>
-            <button v-on:click="$store.commit('addStep')">Next</button>
+            <button @click="$store.commit('removeStep')">Back</button>
+            <button @click="$store.commit('addStep')">Next</button>
           </div>
         </form>
 
