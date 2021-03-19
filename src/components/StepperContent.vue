@@ -1,9 +1,27 @@
 <template>
-  <div class="container">
-      <h1>Step {{$store.state.step}}</h1>
-      <div class="card" v-if="$store.state.step === 1"><h2>Step 1</h2><button v-on:click="$store.commit('addStep')">Next</button></div>
-      <div class="card" v-if="$store.state.step === 2"><h2>Step 2</h2><button v-on:click="$store.commit('addStep')">Next</button></div>
-      <div class="card" v-if="$store.state.step === 3"><h2>Step 3</h2><button>Next</button></div>
+  <div class="stepper-content">
+        <div class="card" v-if="$store.state.step === 1">
+          <h2>Step 1</h2>
+          <button v-on:click="$store.commit('addStep')">Next</button>
+        </div>
+
+      <div class="card" v-if="$store.state.step === 2">
+          <h2 class="is-size-2">Step 2</h2>
+          <p>You made agreat selection! Now lets add your name!</p>
+          <label for="fname">First name</label>
+          <input type="text" name="fname">
+          <label for="lname">Last name</label>
+          <input type="text" name="lname">
+          <div class="btn-div">
+            <button class="back-btn">Back</button>
+            <button v-on:click="$store.commit('addStep')">Next</button>
+          </div>
+        </div>
+
+        <div class="card" v-if="$store.state.step === 3">
+          <h2 class="is-size-2">Step 3</h2>
+          <button>Next</button>
+        </div>
   </div>
 </template>
 
@@ -14,21 +32,42 @@ name: 'StepperContent',
 </script>
 
 <style>
-.container {
-    background-color: grey;
-    height: 70vh;
-    width: 100%;
+.stepper-content {
+    background-color: #F6F8FE;
+    height: 90vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .card {
-    height: 200px;
-    width: 400px;
+    height: 560px;
+    width: 860px;
+    text-align: center;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    align-items: center; 
+}
+.card h2 {
+    /* width: 260px;
+    height: 46px;*/
+    font-weight: 700; 
+    margin-top: 3rem;
+}
 
+.card p {
+  font-size: 16px;
+  color: #8F92A1;
+}
+
+button {
+    width: 160px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.back-btn {
+  float: left;
 }
 </style>
