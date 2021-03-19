@@ -5,18 +5,19 @@
           <button v-on:click="$store.commit('addStep')">Next</button>
         </div>
 
-      <div class="card" v-if="$store.state.step === 2">
+      <form v-if="$store.state.step === 2">
           <h2 class="is-size-2">Add your name</h2>
-          <p>You made agreat selection! Now lets add your name!</p>
+          <p>You made agreat selection! Now lets add your name to it.</p>
           <label for="fname">First name</label>
           <input type="text" name="fname">
           <label for="lname">Last name</label>
           <input type="text" name="lname">
+
           <div class="btn-div">
             <button class="back-btn">Back</button>
             <button v-on:click="$store.commit('addStep')">Next</button>
           </div>
-        </div>
+        </form>
 
         <div class="card" v-if="$store.state.step === 3">
           <h2 class="is-size-2">Step 3</h2>
@@ -41,33 +42,37 @@ name: 'StepperContent',
     align-items: center;
 }
 
-.card {
+form {
     height: 560px;
     width: 860px;
-    text-align: center;
+    background-color: #FFF;
     display: flex;
     flex-direction: column;
     align-items: center;
     /* justify-content: space-between; */
 }
-.card h2 {
+form h2 {
     /* width: 260px;
     height: 46px;*/
     font-weight: 700; 
-    margin-top: 32px ;
+    margin-top: 40px ;
     /* margin-bottom: -1rem; */
 }
 
-.card p {
+form p {
   font-size: 16px;
   color: #8F92A1;
   /* margin: 1rem; */
   margin-top: 10px;
 }
 
-.card label {
+form label {
   /* margin-bottom: -2rem; */
   margin-top: 38px;
+  width: 636px;
+  color: #60657D;
+  font-size: 14px;
+  /* text-align: left; */
 } 
 
 input {
@@ -83,12 +88,12 @@ button {
     width: 160px;
     height: 60px;
     border-radius: 5px;
-    margin-top: 60px;
 }
 
 .btn-div {
   width: 636px;
   display: flex;
   justify-content: space-between;
+  margin-top: 40px;
 }
 </style>
