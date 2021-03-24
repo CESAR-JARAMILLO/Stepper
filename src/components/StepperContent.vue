@@ -14,15 +14,23 @@
           <input type="text" name="lname">
 
           <div class="btn-div">
-            <button @click="$store.commit('removeStep')">Back</button>
-            <button @click="$store.commit('addStep')">Next</button>
+            <a @click="$store.commit('removeStep')">BACK</a>
+            <a class="continue" @click="$store.commit('addStep')">CONTINUE</a>
           </div>
         </form>
 
-        <div class="card" v-if="$store.state.step === 3">
-          <h2 class="is-size-2">Step 3</h2>
-          <button>Next</button>
-        </div>
+        <form class="contact-card" v-if="$store.state.step === 3">
+          <h2 class="is-size-2">Supply contact information</h2>
+          <p>It’s important to let employers know how to contact you. Enter your phone number and email address below.</p>
+          
+          <label for="email">Email address</label>
+          <input type="email" name="email" placeholder="Enter email adress">
+
+          <div class="btn-div">
+            <a @click="$store.commit('removeStep')">BACK</a>
+            <a class="free-account">CREATE A FREE ACCOUNT</a>
+          </div>
+        </form>
   </div>
 </template>
 
@@ -64,6 +72,8 @@ form p {
   color: #8F92A1;
   /* margin: 1rem; */
   margin-top: 10px;
+  width: 526px;
+  text-align: center;
 }
 
 form label {
@@ -84,10 +94,28 @@ input {
   margin-top: 16px;
 }
 
-button {
+a {
     width: 160px;
     height: 60px;
     border-radius: 5px;
+    border: 1px solid #3050FE;
+    display: flex;
+    justify-content: center;
+    /* align-content: center; */
+    flex-direction: column;
+    text-align: center;
+    color: #3050FE;
+}
+
+.continue {
+  background: #3050FE;
+  color: #FFF;
+}
+
+.free-account {
+  width: 272px;
+  background: #3050FE;
+  color: #FFF;
 }
 
 .btn-div {
@@ -95,5 +123,13 @@ button {
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
+}
+
+.contact-card label {
+  margin-top: 88px;
+}
+
+.contact-card .btn-div {
+  margin-top: 96px;
 }
 </style>
