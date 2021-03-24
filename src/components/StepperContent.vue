@@ -5,7 +5,7 @@
           <button v-on:click="$store.commit('addStep')">Next</button>
         </div>
 
-      <form v-if="$store.state.step === 2">
+      <form v-if="$store.state.step === 2 && !nameEntered">
           <h2 class="is-size-2">Add your name</h2>
           <p>You made agreat selection! Now lets add your name to it.</p>
           <label for="fname">First name</label>
@@ -15,11 +15,11 @@
 
           <div class="btn-div">
             <a @click="$store.commit('removeStep')">BACK</a>
-            <a class="continue" @click="$store.commit('addStep')">CONTINUE</a>
+            <a class="continue" @click="nameEnteredTrue">CONTINUE</a>
           </div>
         </form>
 
-        <form class="contact-card" v-if="$store.state.step === 3">
+        <form class="contact-card" v-if="nameEntered">
           <h2 class="is-size-2">Supply contact information</h2>
           <p>It’s important to let employers know how to contact you. Enter your phone number and email address below.</p>
           
@@ -27,7 +27,7 @@
           <input type="email" name="email" placeholder="Enter email adress">
 
           <div class="btn-div">
-            <a @click="$store.commit('removeStep')">BACK</a>
+            <a @click="nameEnteredFalse">BACK</a>
             <a class="free-account">CREATE A FREE ACCOUNT</a>
           </div>
         </form>
@@ -37,6 +37,19 @@
 <script>
 export default {
 name: 'StepperContent',
+data() {
+  return {
+    nameEntered: false
+  }
+},
+methods : {
+  nameEnteredTrue() {
+    this.nameEntered = true
+  },
+  nameEnteredFalse() {
+    this.nameEntered = false
+  }
+}
 }
 </script>
 
